@@ -6,7 +6,7 @@
 /*   By: adippena <angusdippenaar@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 21:00:30 by adippena          #+#    #+#             */
-/*   Updated: 2016/12/04 00:19:00 by adippena         ###   ########.fr       */
+/*   Updated: 2016/12/04 13:17:56 by adippena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdio.h>
 # include <gmp.h>
 
+# define BUFF_SIZE	1
+
 typedef	struct	s_env
 {
 	mpz_t	w;
@@ -26,11 +28,11 @@ typedef	struct	s_env
 	mpz_t	n;
 }				t_env;
 
-void	f(t_env *e);
-void	ff(t_env *e);
-
 void	pollard_rho(t_env *e);
-
 void	print_result(t_env *e);
+int		gnl(const int fd, char **line);
+
+size_t	ft_strlen(char const *s);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

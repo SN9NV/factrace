@@ -6,13 +6,13 @@
 #    By: adippena <angusdippenaar@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/09 12:47:08 by adippena          #+#    #+#              #
-#    Updated: 2016/12/04 00:30:17 by adippena         ###   ########.fr        #
+#    Updated: 2016/12/04 13:21:16 by adippena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	factrace
 INC			=	include
-CFLAGS		=	-Wall -Wextra -Werror -Wno-unused-result -Ofast -g3 -I $(INC)
+CFLAGS		=	-Wall -Wextra -Werror -Wno-unused-result -g3 -I $(INC)
 LFLAGS		=	-lgmp
 CC			=	gcc
 LD			=	gcc

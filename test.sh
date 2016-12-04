@@ -1,15 +1,10 @@
-count=0
-
 time (
-while read i
-do
-	./factrace $i | while IFS= read -r line
+	./factrace 20000 < $1 | while IFS= read -r line
 	do
-		(( count++ ))
-		awk -v line="$line" -v count="$count" 'BEGIN{
+		awk -v line="$line" 'BEGIN{
 		split(line, a, "=");
 		split(a[1], b, "*");
-		printf("%-6i %i %s\n", count, (a[0] == b[0] * b[1]), line);
-		if (a[0] != b[0] * b[1]) {print "ATTENTION HERE!!!!!!!!!!\n"}}'
+		printf("%i %s\n", (a[0] == b[0] * b[1] && b[0] != 1 && b[1] != 1), line);
+		if (a[0] != b[0] * b[1] || b[0] == 1 || b[1] == 1) {print "ATTENTION HERE!!!!!!!!!!\n"}}'
 	done
-done < $1 )
+)
